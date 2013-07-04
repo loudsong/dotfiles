@@ -1,0 +1,34 @@
+LESS="-S -i"
+export LESS
+
+alias l="ls -l"
+alias ll="ls -asl"
+alias lt="ls -asltr"
+
+function ws {
+    wireshark "$1" &
+}
+
+function dl {
+    cd /home/awalker/Downloads
+}
+
+# Source in f5 helper functions
+. f5_helper_functions.sh
+
+#cdsr() {
+    #local case
+    #local main
+    #case=$( case_clean $1 ) || { echo "Bad SR number or name." >&2; return 1; }
+    #main=$( main_case $case )
+    #cd "$HOME/cases/$main"
+#}
+
+cdsw() {
+    cd "/network/build/bigip/v$1/dist/release"
+}
+
+cdhf() {
+    cd "/network/build/bigip/v$1/hotfix/"
+}
+
